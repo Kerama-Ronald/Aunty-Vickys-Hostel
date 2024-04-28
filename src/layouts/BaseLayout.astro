@@ -1,0 +1,44 @@
+---
+import Header from "../components/Header.astro";
+
+const {
+  pageTitle,
+  description,
+  image,
+  card = "summary_large_image",
+} = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.ico" />
+    <title>{pageTitle}</title>
+
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta name="description" content={description} /><meta
+      name="robots"
+      content="index, follow"
+    /><meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} /><meta
+      <meta
+      property="og:image"
+      content={image}
+    /><meta property="og:url" content={canonicalURL} /><meta
+      name="twitter:card"
+      content={card}
+    />
+  </head>
+  <body>
+    <!-- <Header /> -->
+    <div>
+        <slot />
+    </div>
+  </body>
+</html>
