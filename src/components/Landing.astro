@@ -1,7 +1,8 @@
 ---
-
+import {motion} from 'framer-motion'
 ---
 
+<motion.div initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 0.8}}>
 <div class="w-full">
     <div class="relative sm:gap-6 mx-auto">
         <div class="w-full h-screen overflow-hidden">
@@ -21,3 +22,4 @@
         </div>
     </div>
 </div>
+</motion.div>
