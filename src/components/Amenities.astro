@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 ---
 
- <motion.div initial={{opacity: 1}} whileInView={{opacity: 0.9}} transition={{duration: 0.8}}>
+<motion.div client:only="react" initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 0.8}}>
 
 <section class="py-16 px-4 sm:px-6 md:py-24 lg:py-32">
   <div
