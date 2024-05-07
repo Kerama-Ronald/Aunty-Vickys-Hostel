@@ -2,10 +2,11 @@
 
 ---
 
-<header class="fixed z-[100] py-2 w-full text-white"  style="backdrop-filter: blur(16px);">
+<header id="header"
+ class="fixed z-[100] py-2 w-full text-white"  style="backdrop-filter: blur(16px);">
   <nav
     class="z-[100] w-full"
-   
+
   >
     <div
       class="w-full px-4 sm:px-12 justify-end flex flex-row gap-5 top-[5rem] left-12 m-0"
@@ -21,3 +22,22 @@
     </div>
   </nav>
 </header>
+
+<style>
+  #header.activated {
+    background-color: black;
+    color: white;
+  }
+</style>
+<script>
+
+  window.addEventListener('scroll', () => {
+    let header = document.getElementById("header");
+    if (window.scrollY > 20) {
+      
+      header.classList.add("activated")
+    } else {
+      header.classList.remove("activated")
+    }
+  })
+</script>
