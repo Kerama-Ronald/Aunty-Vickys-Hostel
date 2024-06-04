@@ -1,43 +1,76 @@
 ---
-
+import Button from "./Button";
 ---
 
-<header id="header"
- class="fixed z-[100] py-2 w-full text-white"  style="backdrop-filter: blur(16px);">
-  <nav
-    class="z-[100] w-full"
-
+<div class="fixed z-[100] w-full">
+  <header
+    id="header"
+    class="mx-auto container min-h-20 flex items-center py-2 transition-colors ease-in duration-200"
   >
-    <div
-      class="w-full px-4 sm:px-12 justify-end flex flex-row gap-5 top-[5rem] left-12 m-0"
-    >
-      <!-- <a
-        class="block text-center hover:text-blue-600 py-3 decoration-[none] font-medium hover:text-primary"
-        href="/">Enquire</a
-      > -->
-      <a
-        class="block bg-primary rounded-sm text-center py-2 px-4 decoration-[none] font-medium hover:bg-sky-800 duration-150 transition-colors ease-in"
-        href="/contact-us">Contact Us</a
+    <nav class="w-full sm:px-2 px-6">
+      <div
+        class="w-full px-4 sm:px-12 justify-end flex flex-row gap-5 top-[5rem] left-12 m-0"
       >
-    </div>
-  </nav>
-</header>
-
+        <a
+          id="contact"
+          href="/contact-us"
+          class="bg-secondary text-primary px-4 outline-transparent max-sm:min-w-40 text-sm button-slice relative after:bg-primary flex flex-row translate-y-[1px] overflow-hidden transition-colors origin-bottom-left ease-in duration-200 hover:!text-white border-2 border-primary py-2 md:py-3 md:px-6 shadow-gray-400 max-sm:py-4 max-sm:px-4 items-center gap-4 bg-transparent"
+        >
+          <div class="">
+            <svg
+              class="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              ><path
+                d="M21 16.42V19.9561C21 20.4811 20.5941 20.9167 20.0705 20.9537C19.6331 20.9846 19.2763 21 19 21C10.1634 21 3 13.8366 3 5C3 4.72371 3.01545 4.36687 3.04635 3.9295C3.08337 3.40588 3.51894 3 4.04386 3H7.5801C7.83678 3 8.05176 3.19442 8.07753 3.4498C8.10067 3.67907 8.12218 3.86314 8.14207 4.00202C8.34435 5.41472 8.75753 6.75936 9.3487 8.00303C9.44359 8.20265 9.38171 8.44159 9.20185 8.57006L7.04355 10.1118C8.35752 13.1811 10.8189 15.6425 13.8882 16.9565L15.4271 14.8019C15.5572 14.6199 15.799 14.5573 16.001 14.6532C17.2446 15.2439 18.5891 15.6566 20.0016 15.8584C20.1396 15.8782 20.3225 15.8995 20.5502 15.9225C20.8056 15.9483 21 16.1633 21 16.42Z"
+              ></path></svg
+            >
+          </div>
+          <p class="uppercase w-full font-medium max-sm:text-sm text-center">
+            Contact Us
+          </p>
+        </a>
+      </div>
+    </nav>
+  </header>
+</div>
 <style>
   #header.activated {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
+    border-bottom: 1px solid rgb(227, 225, 225)
+  }
+
+  #header.activated #contact {
+    color: black;
+  }
+
+  .button-slice::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -1px;
+    right: -1px;
+    bottom: 0;
+    transform: translate(100%, 0%) rotate(45deg);
+    transition: 0.3s all ease-out;
+    will-change: transform;
+    z-index: -1;
+    transform-origin: bottom right;
+  }
+
+  .button-slice:hover:after {
+    transform: translate(0, 0);
   }
 </style>
 <script>
-
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     let header = document.getElementById("header");
     if (window.scrollY > 20) {
-      
-      header.classList.add("activated")
+      header.classList.add("activated");
     } else {
-      header.classList.remove("activated")
+      header.classList.remove("activated");
     }
-  })
+  });
 </script>

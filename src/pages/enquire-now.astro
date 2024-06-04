@@ -6,105 +6,110 @@ import Footer from "../components/Footer.astro";
 
 <BaseLayout>
   <Header />
-  <section class="py-16 px-4 sm:px-12 md:py-8 lg:py-8">
-    <div class="uppercase flex flex-row gap-1 text-sm">
-      <a class="" href="/">HOME</a>
-      <span>/</span>
-      <span>book now
-      </span>
-    </div>
-    <br />
-    <div
-      class="container items-center h-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8"
-    >
-      <div class="">
-        <p class="uppercase">Contact Details</p>
-        <br />
-        <div>
-          <h3 class="uppercase text-sm">Telephone</h3>
+  <section class="px-4 border sm:px-12">
+    <div class="py-24 container mx-auto">
+      <div class="uppercase flex flex-row gap-1 text-xl font-medium text-primary">
+        <a class="/" href="/">HOME</a>
+        <span>/</span>
+        <span>Enquire</span>
+      </div>
+      <br />
+      <div
+        class="container items-center justify-center h-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-8"
+      >
+      <div class="flex justify-center">
+        <div class="w-fit">
+          <p class="uppercase text-2xl font-medium text-primary">Contact Details</p>
           <br />
-          <p>+254709348242</p>
-          <p>+254708849301</p>
+          <div>
+            <h3 class="uppercase text-sm text-primary">Telephone</h3>
+            <br />
+            <p class="text-lg tracking-wider">+254709348242</p>
+            <p class="text-lg tracking-wider">+254708849301</p>
+          </div>
+        </div>
+        </div>
+
+        <div class="w-full md:w-[500px] sm:h-64">
+          <iframe
+            class="w-full h-full"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8952826854147!2d36.876204973500144!3d-1.232477935566608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f15dd4e9edb19%3A0x8df004aaaf625f93!2sGarden%20City%20Mall!5e0!3m2!1sen!2ske!4v1714405241593!5m2!1sen!2ske"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
-      <div class="w-full md:w-[500px] sm:h-64">
-        <iframe
-          class="w-full h-full"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8952826854147!2d36.876204973500144!3d-1.232477935566608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f15dd4e9edb19%3A0x8df004aaaf625f93!2sGarden%20City%20Mall!5e0!3m2!1sen!2ske!4v1714405241593!5m2!1sen!2ske"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-    <br />
-    <br />
-    <div>
-      <p class="uppercase">Contact Form</p>
       <br />
-      <div class="grid grid-cols-1 md:grid-cols-2">
-        <form action="" class="p-2">
-          <div class="mb-5">
-            <label
-              for="email"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Your email</label
-            >
-            <input
-              type="email"
-              id="email"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="name@host.com"
-              required
-            />
-          </div>
-          <div class="mb-5">
-            <label
-              for="name"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Name</label
-            >
-            <input
-              type="text"
-              id="email"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Kibet I."
-              required
-            />
-          </div>
-          <div class="mb-5">
-            <label
-              for="phone"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Phone</label
-            >
-            <input
-              type="text"
-              id="email"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="+254708******"
-              required
-            />
-          </div>
-          <div class="mb-5">
-            <label
-              for="message"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Message</label
-            >
-            <textarea
-              id="message"
-              class="bg-gray-50 border h-24 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Your message here"
-              required></textarea>
-          </div>
-          <div class="mb-5 text-right">
-            <button
-              class="uppercase px-4 py-2 rounded-md bg-blue-600 hover:bg-blue-800 text-white"
-              >Submit</button
-            >
-          </div>
-        </form>
+      <br />
+      <div class="">
+        <p class="uppercase text-center text-3xl font-bold text-primary">Contact Form</p>
+        <br />
+        <div class="flex items-center justify-center">
+          <form action="" class="p-2 lg:w-1/2 w-full sm:w-4/5">
+            <div class="mb-5">
+              <label
+                for="email"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Your email</label
+              >
+              <input
+                type="email"
+                id="email"
+                aria-required="true"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="name@host.com"
+                required
+              />
+            </div>
+            <div class="mb-5">
+              <label
+                for="name"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="email"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Kibet I."
+                required
+              />
+            </div>
+            <div class="mb-5">
+              <label
+                for="phone"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Phone</label
+              >
+              <input
+                type="text"
+                id="email"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="+254708******"
+                required
+              />
+            </div>
+            <div class="mb-5">
+              <label
+                for="message"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                class="bg-gray-50 border h-24 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Your message here"
+                required></textarea>
+            </div>
+            <div class="mb-5 py-4 text-right">
+              <button
+                class="uppercase px-6 transition-colors ease-in duration-100 py-2 rounded-md bg-primary hover:bg-blue-600 text-white"
+                >Submit</button
+              >
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </section>
