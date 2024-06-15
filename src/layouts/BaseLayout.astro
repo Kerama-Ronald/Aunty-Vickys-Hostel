@@ -1,5 +1,5 @@
 ---
-import Header from "../components/Header.astro";
+import '@fontsource/poppins'
 
 const {
   pageTitle,
@@ -34,14 +34,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       name="twitter:card"
       content={card}
     />
+    <link rel="stylesheet" href="/node_modules/aos/dist/aos.css" />
   </head>
   <body>
     <!-- <Header /> -->
     <div>
-     
-        <slot />
+      <slot />
     </div>
   </body>
+  <script is:inline src="/node_modules/aos/dist/aos.js"></script>
+  <script>
+    //@ts-expect-error
+    AOS.init();
+    console.log("inited")
+  </script>
 </html>
 
 <style>
