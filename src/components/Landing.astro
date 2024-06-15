@@ -3,16 +3,16 @@ const images = ["outdoor.jpg", "front.jpg", "rooms.jpg"];
 ---
 
 <!-- <motion.div client:only="react" initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 0.8}}> -->
-<div class="w-full">
-  <div class="relative container sm:gap-6 mx-auto">
-    <div class="overflow-hidden max-lg:h-screen max-h-[800px]">
+<div class="w-full max-sm:h-screen">
+  <div class="relative container h-full sm:gap-6 mx-auto">
+    <div class="overflow-hidden max-lg:h-screen">
       <div id="slider" class="h-screen relative">
         {
           images.map((image: string, index: number) => (
             <img
               id=""
               src={`/images/${image}`}
-              class={`w-full absolute top-0 left-0 brightness-[.2] object-contain ${index === 0 ? 'opacity-100 zoom-out' : 'opacity-0'}`}
+              class={`w-full absolute top-0 h-screen object-cover left-0 brightness-[.2] border-2 border-red-600 ${index === 0 ? 'opacity-100 zoom-out' : 'opacity-0'}`}
               alt=""
             />
           ))
