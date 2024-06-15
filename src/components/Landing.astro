@@ -1,16 +1,23 @@
 ---
-import { motion } from "framer-motion";
+const images = ["outdoor.jpg", "front.jpg", "rooms.jpg"];
 ---
 
 <!-- <motion.div client:only="react" initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 0.8}}> -->
 <div class="w-full">
   <div class="relative container sm:gap-6 mx-auto">
     <div class="overflow-hidden max-lg:h-screen max-h-[800px]">
-      <img
-        src="/images/front.jpg"
-        class="w-full brightness-[.2] object-contain"
-        alt=""
-      />
+      <div id="slider" class="h-screen relative">
+        {
+          images.map((image: string, index: number) => (
+            <img
+              id=""
+              src={`/images/${image}`}
+              class={`w-full absolute top-0 left-0 brightness-[.2] object-contain ${index === 0 ? 'opacity-100 zoom-out' : 'opacity-0'}`}
+              alt=""
+            />
+          ))
+        }
+      </div>
     </div>
     <div
       class="z-[50] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 text-white"
@@ -24,7 +31,8 @@ import { motion } from "framer-motion";
             </p> -->
       <br />
       <div class="flex gap-6 items-center justify-center">
-        <a href="#amenities"
+        <a
+          href="#amenities"
           class="rounded-sm py-2 text-lg px-4 hover:bg-white hover:text-black font-semibold transition-all duration-200 ease-in"
           >Learn More</a
         >
@@ -33,19 +41,77 @@ import { motion } from "framer-motion";
           >Book Now</button
         > -->
         <div class="relative">
-            <div class="absolute -inset-5">
-                <div
-                    class="w-full h-full max-w-sm mx-auto lg:mx-0 opacity-30 blur-lg bg-gradient-to-r from-yellow-400 via-pink-500 to-green-600">
-                </div>
+          <div class="absolute -inset-5">
+            <div
+              class="w-full h-full max-w-sm mx-auto lg:mx-0 opacity-30 blur-lg bg-gradient-to-r from-yellow-400 via-pink-500 to-green-600"
+            >
             </div>
-            <a href="enquire-now" title=""
-                class="relative z-10 inline-flex items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-primary border-2 border-transparent sm:w-auto rounded-xl hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
-                role="button">
-                Book Now
-            </a>
+          </div>
+          <a
+            href="enquire-now"
+            title=""
+            class="relative z-10 inline-flex items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-primary border-2 border-transparent sm:w-auto rounded-xl hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+            role="button"
+          >
+            Book Now
+          </a>
         </div>
       </div>
     </div>
   </div>
 </div>
 <!-- </div></motion.div> -->
+
+<style>
+  .zoom-out {
+    animation-name: zoom-out;
+    animation-duration: 10s;
+  }
+  .zoom-in {
+    animation-name: zoom-in;
+    animation-duration: 10s;
+  }
+
+  /* #slider img.active {
+    opacity: 100% !important;
+  } */
+
+  @keyframes zoom-out {
+    from {
+      transform: scale(1.1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  @keyframes zoom-in {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+</style>
+<script>
+  const slider = document.getElementById("slider");
+  const slides = slider.querySelectorAll("img")
+
+  const slideCount = slides.length;
+  let activeSlide = 0;
+  let zoomIn = false;
+
+  setInterval(() => {
+    slides[activeSlide].classList.remove("active", "zoom-out", "zoom-in");
+    slides[activeSlide].style.opacity = "0%";
+    activeSlide++;
+    zoomIn = !zoomIn
+    if (activeSlide >= slideCount) {
+      activeSlide = 0;
+    }
+    let zoomClass = zoomIn ? 'zoom-in' : 'zoom-out';
+    slides[activeSlide].classList.add("active", zoomClass);
+    slides[activeSlide].style.opacity = "100%";
+  }, 10000);
+  let data = ["outdoor.jpg", "front.jpg"];
+</script>
