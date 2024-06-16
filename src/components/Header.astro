@@ -1,5 +1,4 @@
 ---
-import Button from "./Button";
 ---
 
 <div class="fixed z-[100] w-full">
@@ -28,7 +27,7 @@ import Button from "./Button";
         <a
           id="contact"
           href="/contact-us"
-          class="bg-secondary text-primary outline-transparent text-sm button-slice relative after:bg-primary flex flex-row translate-y-[1px] overflow-hidden transition-colors origin-bottom-left ease-in duration-200 hover:!text-white border-2 border-primary h-12 sm:py-2 md:py-3 md:px-6 shadow-gray-400 max-sm:py-0 max-sm:px-2  items-center gap-2 sm:gap-4 bg-transparent"
+          class="bg-secondary text-primary outline-transparent text-sm button-slice relative after:bg-primary flex flex-row translate-y-[1px] overflow-hidden transition-colors origin-bottom-left ease-in duration-200 hover:!text-white border-2 border-primary h-12 sm:py-2 md:py-3 md:px-6 shadow-gray-400 max-sm:py-0 max-sm:px-2 items-center gap-2 sm:gap-4 bg-transparent"
         >
           <div class="">
             <svg
@@ -88,12 +87,16 @@ import Button from "./Button";
   }
 </style>
 <script>
-  window.addEventListener("scroll", () => {
-    let header = document.getElementById("header");
-    if (window.scrollY > 20) {
-      header.classList.add("activated");
-    } else {
-      header.classList.remove("activated");
-    }
+  console.log("I am here");
+  window.addEventListener("load", () => {
+    console.log("window loaded");
+    window.addEventListener("scroll", () => {
+      let header = document.getElementById("header");
+      if (window.scrollY > 20) {
+        header.classList.add("activated");
+      } else {
+        header.classList.remove("activated");
+      }
+    });
   });
 </script>

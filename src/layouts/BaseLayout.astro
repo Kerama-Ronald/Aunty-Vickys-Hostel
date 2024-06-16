@@ -34,7 +34,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       name="twitter:card"
       content={card}
     />
-    <link rel="stylesheet" href="/node_modules/aos/dist/aos.css" />
   </head>
   <body class="">
     <!-- <Header /> -->
@@ -42,12 +41,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <slot />
     </div>
   </body>
-  <script is:inline src="/node_modules/aos/dist/aos.js"></script>
-  <script>
-    //@ts-expect-error
-    AOS.init();
-    console.log("inited")
-  </script>
+
 </html>
 
 <style>
