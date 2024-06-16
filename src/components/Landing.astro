@@ -1,5 +1,5 @@
 ---
-const images = ["outdoor.jpg", "front.jpg", "rooms.jpg"];
+const images = ["front.jpg"]; //, "rooms.jpg"];
 ---
 
 <!-- <motion.div client:only="react" initial={{opacity: 0}} whileInView={{opacity: 1}} transition={{duration: 0.8}}> -->
@@ -12,7 +12,7 @@ const images = ["outdoor.jpg", "front.jpg", "rooms.jpg"];
             <img
               id=""
               src={`/images/${image}`}
-              class={`w-full absolute top-0 h-screen object-cover left-0 brightness-[.2] border-2 border-red-600 ${index === 0 ? 'opacity-100 zoom-out' : 'opacity-0'}`}
+              class={`w-full absolute top-0 h-screen object-cover left-0 brightness-[.3] border-2 border-red-600 ${index === 0 ? "opacity-100 zoom-out" : "opacity-0"}`}
               alt=""
             />
           ))
@@ -89,25 +89,30 @@ const images = ["outdoor.jpg", "front.jpg", "rooms.jpg"];
     }
   }
 </style>
+
 <script>
-  const slider = document.getElementById("slider");
-  const slides = slider.querySelectorAll("img")
+  {
+    () => {
+      const slider = document.getElementById("slider");
+      const slides = slider.querySelectorAll("img");
 
-  const slideCount = slides.length;
-  let activeSlide = 0;
-  let zoomIn = false;
+      const slideCount = slides.length;
+      let activeSlide = 0;
+      let zoomIn = false;
 
-  setInterval(() => {
-    slides[activeSlide].classList.remove("active", "zoom-out", "zoom-in");
-    slides[activeSlide].style.opacity = "0%";
-    activeSlide++;
-    zoomIn = !zoomIn
-    if (activeSlide >= slideCount) {
-      activeSlide = 0;
-    }
-    let zoomClass = zoomIn ? 'zoom-in' : 'zoom-out';
-    slides[activeSlide].classList.add("active", zoomClass);
-    slides[activeSlide].style.opacity = "100%";
-  }, 10000);
-  let data = ["outdoor.jpg", "front.jpg"];
+      setInterval(() => {
+        slides[activeSlide].classList.remove("active", "zoom-out", "zoom-in");
+        slides[activeSlide].style.opacity = "0%";
+        activeSlide++;
+        zoomIn = !zoomIn;
+        if (activeSlide >= slideCount) {
+          activeSlide = 0;
+        }
+        let zoomClass = zoomIn ? "zoom-in" : "zoom-out";
+        slides[activeSlide].classList.add("active", zoomClass);
+        slides[activeSlide].style.opacity = "100%";
+      }, 10000);
+      let data = ["outdoor.jpg", "front.jpg"];
+    };
+  }
 </script>

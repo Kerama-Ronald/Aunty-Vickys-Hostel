@@ -46,11 +46,11 @@ export default function Amenity() {
   return (
     <section
       id="amenities"
-      className="py-16 fade-up px-4 sm:px-6 md:py-24 lg:py-32"
+      className="py-16 fade-up md:py-24 lg:py-32"
     >
       <div
         ref={container}
-        className="container zoom-in mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        className="container px-6 lg:px-20 zoom-in mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
         <div className="box flex flex-col items-center text-center">
           <svg

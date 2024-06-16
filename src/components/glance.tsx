@@ -59,8 +59,8 @@ export default function Glance() {
     { scope: glanceContainer }
   );
   return (
-    <section className="py-16 px-4 sm:px-6 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-      <div ref={glanceContainer} className="container mx-auto">
+    <section className="py-16 md:py-24 lg:py-32 dark:bg-gray-800">
+      <div ref={glanceContainer} className="container px-6 lg:px-20 mx-auto">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col items-center justify-center space-y-4">
             <div className="h-[300px] w-full overflow-hidden">
