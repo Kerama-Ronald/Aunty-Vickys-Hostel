@@ -6,7 +6,7 @@ import Amenities from "../components/Amenities.astro";
 import Location from "../components/Location.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import Floating from "../components/Floating.astro";
+import Floater from "../components/Floater.astro"
 import Amenity from "../components/amenity";
 import Glance from "../components/glance";
 ---
@@ -14,7 +14,7 @@ import Glance from "../components/glance";
 <BaseLayout>
   <Header />
   <Landing />
-  <Floating />
+  <Floater />
   <!-- <Amenities /> -->
   <Amenity client:only="react" />
   <Glance client:only="react" />
